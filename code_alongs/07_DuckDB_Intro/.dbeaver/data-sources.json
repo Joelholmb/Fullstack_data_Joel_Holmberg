@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"duckdb_jdbc-1920455cd31-7b257984a0f535f9": {
+			"provider": "generic",
+			"driver": "duckdb_jdbc",
+			"name": "first_db.db",
+			"save-password": true,
+			"configuration": {
+				"database": "C:\\Document\\Fullstack_Data\\Fullstack_data_Joel_Holmberg\\code_alongs\\07_DuckDB_Intro\\first_db.db",
+				"url": "jdbc:duckdb:C:\\Document\\Fullstack_Data\\Fullstack_data_Joel_Holmberg\\code_alongs\\07_DuckDB_Intro\\first_db.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

@@ -1,0 +1,35 @@
+{
+	"folders": {},
+	"connections": {
+		"duckdb_jdbc-1920482de95-226dcf9ff562fcea": {
+			"provider": "generic",
+			"driver": "duckdb_jdbc",
+			"name": "social_media.db",
+			"save-password": true,
+			"configuration": {
+				"database": "C:\\Document\\Fullstack_Data\\Fullstack_data_Joel_Holmberg\\code_alongs\\08_analyze_csv_duckdb\\social_media.db",
+				"url": "jdbc:duckdb:C:\\Document\\Fullstack_Data\\Fullstack_data_Joel_Holmberg\\code_alongs\\08_analyze_csv_duckdb\\social_media.db",
+				"configurationType": "MANUAL",
+				"type": "dev",
+				"closeIdleConnection": true,
+				"auth-model": "native"
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false,
+			"smart-commit": false,
+			"smart-commit-recover": true,
+			"auto-close-transactions": true,
+			"close-transactions-period": 1800,
+			"auto-close-connections": true,
+			"close-connections-period": 14400
+		}
+	}
+}

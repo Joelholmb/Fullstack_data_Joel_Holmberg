@@ -23,4 +23,3 @@ SELECT * EXCLUDE (Innehåll) FROM  innehall.tabelldata ORDER BY "Visningstid (ti
 SELECT * FROM  innehall.diagramdata;-- ORDER BY "Visningstid (timmar)";
 
 SELECT STRFTIME('%Y-%m-%d', Datum), Visningar FROM innehall.totalt;
-

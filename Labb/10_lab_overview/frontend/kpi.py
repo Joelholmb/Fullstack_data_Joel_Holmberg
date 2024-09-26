@@ -25,3 +25,14 @@ class ContentKPI:
 # create more KPIs here
 class DeviceKPI:
     pass 
+
+class TopVideos:
+    def __init__(self):
+        self.df = QueryDatabase("SELECT * FROM top_5_videos;").df
+
+    def display_top_videos(self):
+        df = self.df
+        st.markdown("## Topp 5 per visningar")
+
+        # Displays the top 5 videos in a table
+        st.dataframe(df)

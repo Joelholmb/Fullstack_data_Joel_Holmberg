@@ -1,6 +1,4 @@
-CREATE SCHEMA IF NOT EXISTS innehall_marts;
-
-CREATE TABLE IF NOT EXISTS innehall_marts.top_5_videos AS (
+CREATE TABLE IF NOT EXISTS top_5_videos AS (
     SELECT
         t.Videotitel,
         t."Publiceringstid för video" AS Publiceringstid,
@@ -20,5 +18,5 @@ CREATE TABLE IF NOT EXISTS innehall_marts.top_5_videos AS (
     LIMIT 5
 );
 
-SELECT * FROM innehall_marts.top_5_videos;
+SELECT * FROM top_5_videos;
 

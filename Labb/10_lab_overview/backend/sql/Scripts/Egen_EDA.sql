@@ -1,65 +1,60 @@
--- Utforska tabelldata
+-- Explore the data table to understand its structure and content
 SELECT * FROM datum.tabelldata LIMIT 10;
 
--- Utforska totalt
+-- Explore the "totalt" table to check for summary data
 SELECT * FROM datum.totalt LIMIT 10;
 
--- Utforska diagramdata
+-- Explore device type data to see how views are distributed across different device types
 SELECT * FROM enhetstyp.diagramdata LIMIT 10;
 
--- Utforska åldersdata
+-- Explore age data to understand the distribution of viewers by age group
 SELECT * FROM tittare.tabelldata_alder LIMIT 10;
 
--- Utforska könsdata
+-- Explore gender data to understand the distribution of viewers by gender
 SELECT * FROM tittare.tabelldata_kon LIMIT 10;
 
--- Topp 5 videor baserat på exponeringar
+-- Retrieve the top 5 videos based on the number of exposures
 SELECT 
-    Videotitel, 
-    Exponeringar, 
+    Videotitel,
+    Exponeringar,
     "Klickfrekvens för exponeringar (%)" AS Klickfrekvens
 FROM 
     innehall.tabelldata
 ORDER BY 
-    Exponeringar DESC
-LIMIT 5;
+    Exponeringar DESC  -- Order by impressions in descending order
+LIMIT 5;  -- Limit to the top 5 videos
 
-
--- Trafikkällor och genomsnittlig visningstid
+-- Retrieve traffic sources along with the average watch time per source
 SELECT 
-    "Trafikkälla", 
-    AVG("Visningstid (timmar)") AS Genomsnittlig_visningstid
+    "Trafikkälla",
+    AVG("Visningstid (timmar)") AS Genomsnittlig_visningstid 
 FROM 
     trafikkalla.tabelldata
 GROUP BY 
     Trafikkälla
 ORDER BY 
-    Genomsnittlig_visningstid DESC;
+    Genomsnittlig_visningstid DESC;  -- Order by average watch time in descending order
 
-
-
-
--- Videor som bidragit mest till prenumerationstillväxt
+-- Retrieve the top 5 videos that contributed most to subscriber growth
 SELECT 
-    Videotitel, 
+    Videotitel,
     Prenumeranter
 FROM 
     innehall.tabelldata
 WHERE 
-    Prenumeranter IS NOT NULL
+    Prenumeranter IS NOT NULL  -- Filter out videos with no subscriber data
 ORDER BY 
-    Prenumeranter DESC
-LIMIT 5;
+    Prenumeranter DESC  -- Order by subscriber growth in descending order
+LIMIT 5;  -- Limit to the top 5 videos
 
--- Klickfrekvens för exponeringar per trafikkälla
+-- Retrieve the average click-through rate (CTR) for impressions per traffic source
 SELECT 
-    "Trafikkälla", 
+    "Trafikkälla",
     AVG("Klickfrekvens för exponeringar (%)") AS Genomsnittlig_klickfrekvens
-FROM 
     trafikkalla.tabelldata
 WHERE 
     "Klickfrekvens för exponeringar (%)" IS NOT NULL
 GROUP BY 
     Trafikkälla
 ORDER BY 
-    Genomsnittlig_klickfrekvens DESC;
+    Genomsnittlig_klickfrekvens DESC;  -- Order by average CTR in descending order

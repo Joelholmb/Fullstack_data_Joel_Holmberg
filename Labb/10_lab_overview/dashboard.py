@@ -5,6 +5,7 @@ from frontend.graphs import ViewsTrend, Traffic
 from frontend.graphs import SubscriberGrowth
 from frontend.graphs import ViewerDemographics
 from frontend.kpi import TopVideos
+from frontend.kpi import EngagementKPI
 
 
 
@@ -15,6 +16,7 @@ traffic_graph = Traffic()
 subscriber_growth = SubscriberGrowth()
 demographics = ViewerDemographics()
 topp5Videos = TopVideos()
+viewer_engagement = EngagementKPI()
 
 
 
@@ -24,11 +26,13 @@ def layout():
     # device_kpi.display_device_views()
     # device_kpi.display_device_summary()
     content_kpi.display_content()
+    viewer_engagement.display_engagement_kpi()
     topp5Videos.display_top_videos()
     views_graph.display_plot()
     traffic_graph.display_traffic()
     subscriber_growth.display_subscriber_growth()
     demographics.display_demographics()
+    
     
 
 

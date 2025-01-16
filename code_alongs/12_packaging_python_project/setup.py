@@ -17,7 +17,6 @@ setup(
         "pandas",
         "requests",
         "folium",
-        "pprint",
         "python-dotenv",
     ],
     packages=find_packages(exclude=["test*", "explorations"]),
